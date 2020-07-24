@@ -108,7 +108,7 @@ function undateWeatherApp(city) {
 
 
 const requestCity = async (cityName) => {
-    const baseWeatherURL = "http://api.openweathermap.org/data/2.5/weather";
+    const baseWeatherURL = "https://api.openweathermap.org/data/2.5/weather";
     const query = `?q=${cityName}&appid=${apiKey}`;
     // make fetch call (promise call)
     const response = await fetch(baseWeatherURL + query);
