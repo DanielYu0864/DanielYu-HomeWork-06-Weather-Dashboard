@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-history" id="search-history">
+        <button class="btn btn-primary shadow-sm" type="button" id="clear-history">Clear history</button>
+            <ul class="list-group">
+
+            </ul>
+    </div>
+    <div class="col-sm-12" id ="five-day-forecast-container">
+      <h3>5-Day Forecast:</h3>
+      <div class="row text-light display-none forecast-container">
+          <div class="col-sm-10 shadow-sm bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+              <p id="fDate0"></p>
+              <p class="icon-container-sm" id="fImg0"></p>
+              <p>Temp:<span id="fTemp0"></span></p>
+              <p>Humidity:<span id="fHumidity0"></span></p>
+          </div>
+          <div class="col-sm-5 shadow-sm bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+              <p id="fDate1"></p>
+              <p class="icon-container-sm" id="fImg1"></p>
+              <p>Temp:<span id="fTemp1"></span></p>
+              <p>Humidity:<span id="fHumidity1"></span></p>
+          </div>
+          <div class="col-sm-5 shadow-sm bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+              <p id="fDate2"></p>
+              <p class="icon-container-sm" id="fImg2"></p>
+              <p>Temp:<span id="fTemp2"></span></p>
+              <p>Humidity:<span id="fHumidity2"></span></p>
+          </div>
+          <div class="col-sm-5 shadow-sm bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+              <p id="fDate3"></p>
+              <p class="icon-container-sm" id="fImg3"></p>
+              <p>Temp:<span id="fTemp3"></span></p>
+              <p>Humidity:<span id="fHumidity3"></span></p>
+          </div>
+          <div class="col-sm-5 shadow-sm bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+              <p id="fDate4"></p>
+              <p class="icon-container-sm" id="fImg4"></p>
+              <p>Temp:<span id="fTemp4"></span></p>
+              <p>Humidity:<span id="fHumidity4"></span></p>
+          </div>
+      </div>
+  </div>
+
+    <div class="container my-5">
+        <h1 class="text-center title">
+          <div class="current-data"></div>
+          Search
+        </h1>
+        <form  class="search-loaction">
+            <input type="text"
+                name="city"
+                placeholder="input your city"
+                autocomplete="off"
+                class="form-control text-muted form-rounded p-4 shadow-sm"/>
+        </form>
+        <div class="card rounded my-3 shadow-lg display-none back-card">
+            <div class="card-top text-center">
+                <div class="city-name my-3">
+                    <p>Seattle</p>
+                    <span>...</span>
+                </div>
+                <img class="card-img-top time" src="./img/night_image.svg" alt="">
+            </div>
+
+
+            <div class="card-body">
+                <div class="card-mid row">
+                    <div class="col-8 text-center temp">
+                        <span class="tempC">30&deg;C</span>
+                    </div>
+                    <div class="col-4 condition-temp">
+                        <p class="condition">Thunder Storm</p>
+                        <p class="high">30&deg;C</p>
+                        <p class="low">27&deg;C</p>
+                    </div>
+                </div>
+
+                <div class="icon-container card shadow mx-auto">
+                    <img class="icon" src="./img/cloud.svg" alt="">
+                </div>
+
+                <div class="card-buttom px-5 py-4 row">
+                    <div class="col text-center">
+                        <p class="wind-speed">3.1 m/s</p>
+                        <span>Wind Speed</span>
+                    </div>
+                    <div class="col text-center">
+                        <p class = "humidity">55%</p>
+                        <span>Humidity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="request.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
