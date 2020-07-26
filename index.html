@@ -10,7 +10,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="search-history" id="search-history">
@@ -67,7 +67,7 @@
                 autocomplete="off"
                 class="form-control text-muted form-rounded p-4 shadow-sm"/>
         </form>
-        <div class="card rounded my-3 shadow-lg display-none back-card">
+        <div class="card rounded my-3 display-none shadow-lg back-card">
             <div class="card-top text-center">
                 <div class="city-name my-3">
                     <p>Seattle</p>
@@ -84,8 +84,12 @@
                     </div>
                     <div class="col-4 condition-temp">
                         <p class="condition">Thunder Storm</p>
-                        <p class="high">30&deg;C</p>
-                        <p class="low">27&deg;C</p>
+                        <p>
+                            UV Index
+                            <br><br>
+                            <b><span class="uv-index uv-badge">1.0</span></b>
+
+                        </p>
                     </div>
                 </div>
 
@@ -110,7 +114,7 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-<script src="request.js"></script>
-<script src="script.js"></script>
+<script src="./js/request.js"></script>
+<script src="./js/script.js"></script>
 </body>
 </html>

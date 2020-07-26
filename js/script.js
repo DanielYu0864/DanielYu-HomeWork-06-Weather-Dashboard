@@ -59,11 +59,11 @@ function undateWeatherApp(city) {
     $(".current-data").html((new Date(city.dt)).toString());
     $(".tempC").html(`${spitOutCelcius(city.main.temp)}&deg;C`);
     $(".condition").html(city.weather[0].description);
-    $(".high").html(`${spitOutCelcius(city.main.temp_max)}&deg;C`);
-    $(".low").html(`${spitOutCelcius(city.main.temp_min)}&deg;C`);
     $(".icon").attr("src", iconSrc);
     $(".wind-speed").html(`${city.wind.speed} m/s`);
     $(".humidity").html(`${city.main.humidity}%`);
+    // call uv
+    getUVIndex(city);
 
     if (isDayTime(imageName)) {
         console.log("day");
@@ -180,6 +180,36 @@ function clearHistory(event){
     localStorage.clear();
     document.location.reload();
 
+}
+
+// function to add UVI
+function getUVIndex(response) {
+    // uv api url
+    const uviAPI = "https://api.openweathermap.org/data/2.5/uvi?lat=";
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;
+    var uviQueryURL = `${uviAPI}${lat}&lon=${lon}&appid=${apiKey}`;
+    $.ajax({
+        url: uviQueryURL,
+        method: "GET"
+      }).then(function(uviResponse) {
+        var uviResults = uviResponse;
+        var uvi = uviResults.value;
+        $(".uv-index").html(uvi);
+
+        // DRY this out...
+        if (uvi < 3) {
+          $(".uv-badge").css("background-color", "green");
+        } else if (uvi < 6) {
+          $(".uv-badge").css("background-color", "yellow");
+        } else if (uvi < 8) {
+          $(".uv-badge").css("background-color", "orange");
+        } else if (uvi < 11) {
+          $(".uv-badge").css("background-color", "red");
+        } else {
+          $(".uv-badge").css("background-color", "purple");
+        }
+      });
 }
 
 
