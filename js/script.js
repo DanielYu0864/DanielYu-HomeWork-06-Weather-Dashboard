@@ -62,7 +62,7 @@ function undateWeatherApp(city) {
     $(".humidity").html(`${city.main.humidity}%`);
     // call uv
     getUVIndex(city);
-
+    // day, night time display
     if (isDayTime(imageName)) {
         console.log("day");
         timeImage.setAttribute("src", "img/day_image.svg");
