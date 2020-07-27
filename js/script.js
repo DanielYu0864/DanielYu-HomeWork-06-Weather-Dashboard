@@ -1,5 +1,3 @@
-// const apiKey = "e93223a6b1823d41860077c8e54b5206";
-
 // giving the variable
 const searchForm = document.querySelector(".search-loaction");
 const cityValue = document.querySelector(".search-loaction input");
